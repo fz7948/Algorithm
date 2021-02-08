@@ -17,9 +17,9 @@ H-Index는 과학자의 생산성과 영향력을 나타내는 지표입니다. 
 ### 입출력 예
 
 ```
-citations	return
+citations	  return
 
-[3, 0, 6, 1, 5]	3 
+[3, 0, 6, 1, 5]	  3 
 ```
 
 
@@ -32,14 +32,21 @@ citations	return
 
 ```js
 function solution(citations) {        
+
     var answer = 0;          
+    
     for (let i=0; i<citations.length; i++) {
+    
         let bookNum =0; //책의 권수
+        
         let quoNum =0; //인용된 논문수
         
         for(let j=0; j<citations.length; j++) { 
+        
             if(i<=citations[j]) {
+            
                 bookNum = i;
+                
                 quoNum += 1;
                 
             } else {
@@ -47,15 +54,19 @@ function solution(citations) {
             }
            
         }
+        
         if(quoNum>bookNum) {  //책의 권수보다 겹치는 인용 논문수가 커지면 출력
+        
             answer+=1;
+            
         } else {
                
             }
-       
 
     }
+    
     return answer;
+    
 }
 ```
 
