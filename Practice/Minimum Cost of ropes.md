@@ -61,32 +61,41 @@ two which gives {28}. Hence, the total cost is
 
 ```js
 let array = [4, 3, 2, 6, 5];
+
 let result = solve(array);
 
 function solve(array) {
 
     let result, newArray, newNum;
+    
     result = 0;
+    
     let arrayLen = array.length;
+    
     newArray = array.sort(function(a,b){return a-b;});  // 처음 배열 array 아래차순으로 배열
 
     for(let i=0; i<arrayLen-1; i++) {
 
-       newArray = newArray.sort(function(a,b){return a-b;}); // newArray 배열 아래차순으로 배열
-       
+       newArray = newArray.sort(function(a,b){return a-b;}); // newArray 배열 아래차순으로 배
 
         for(let j=0;j<=0;j++){
-           newNum = newArray[0] + newArray[1] // 1,2번째 인덱스 값을 newNum에 할당
-           newArray.splice(0,2);  // newArray 배열의 0,1번째 인덱스 추출
-           result += newNum;  // newNum 값을 result에 할당
-            newArray.unshift(newNum);  // newNum 값을 newArray 배열 0번째 인덱스에 추가
-        }
         
-       
-
+           newNum = newArray[0] + newArray[1] // 1,2번째 인덱스 값을 newNum에 할당
+           
+           newArray.splice(0,2);  // newArray 배열의 0,1번째 인덱스 추출
+           
+           result += newNum;  // newNum 값을 result에 할당
+           
+            newArray.unshift(newNum);  // newNum 값을 newArray 배열 0번째 인덱스에 추가
+            
+        }
+    
     }
+    
     console.log(result);
+    
     return result;
+    
 }
 ```
 
